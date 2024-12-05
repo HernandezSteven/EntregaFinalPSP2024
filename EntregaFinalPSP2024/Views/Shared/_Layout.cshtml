@@ -68,29 +68,32 @@
 </head>
 <body class="bg-light">
 
-    <!-- Botón para mostrar/ocultar la barra lateral -->
-    <button class="toggle-btn" onclick="toggleNavbar()">
-        <i class="bi bi-list"></i>
-    </button>
+    @if (Context.Session.GetString("UsuarioID") != null)
+    {
+        <!-- Botón para mostrar/ocultar la barra lateral -->
+        <button class="toggle-btn" onclick="toggleNavbar()">
+            <i class="bi bi-list"></i>
+        </button>
 
-    <!-- Barra de navegación vertical -->
-    <div id="sidebar" class="vertical-navbar d-flex flex-column">
-        <br /><br /><br />
-        <a class="navbar-brand text-center mb-4" asp-area="" asp-controller="Home" asp-action="Index">
-            <i class="bi bi-gear"></i> <strong>Entrega PSP 2024</strong>
-        </a>
-        <nav class="nav flex-column">
-            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Inicio</a>
-            <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index"><i class="bi bi-person"></i> Usuarios</a>
-            <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="Index"><i class="bi bi-shield-lock"></i> Roles</a>
-            <a class="nav-link" asp-area="" asp-controller="Categorias" asp-action="Index"><i class="bi bi-tags"></i> Categorías</a>
-            <a class="nav-link" asp-area="" asp-controller="Comentarios" asp-action="Index"><i class="bi bi-chat-left-text"></i> Comentarios</a>
-            <a class="nav-link" asp-area="" asp-controller="Ejercicios" asp-action="Index"><i class="bi bi-journal-text"></i> Ejercicios</a>
-            <a class="nav-link" asp-area="" asp-controller="Metas" asp-action="Index"><i class="bi bi-bullseye"></i> Metas</a>
-            <a class="nav-link" asp-area="" asp-controller="Estadisticas" asp-action="Index"><i class="bi bi-graph-up-arrow"></i> Estadísticas</a>
-            <a class="nav-link" asp-area="" asp-controller="Progresoes" asp-action="Index"><i class="bi bi-trophy"></i> Progreso</a>
-        </nav>
-    </div>
+        <!-- Barra de navegación vertical -->
+        <div id="sidebar" class="vertical-navbar d-flex flex-column">
+            <br /><br /><br />
+            <a class="navbar-brand text-center mb-4" asp-area="" asp-controller="Home" asp-action="Index">
+                <i class="bi bi-gear"></i> <strong>Entrega PSP 2024</strong>
+            </a>
+            <nav class="nav flex-column">
+                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Inicio</a>
+                <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index"><i class="bi bi-person"></i> Usuarios</a>
+                <a class="nav-link" asp-area="" asp-controller="Roles" asp-action="Index"><i class="bi bi-shield-lock"></i> Roles</a>
+                <a class="nav-link" asp-area="" asp-controller="Categorias" asp-action="Index"><i class="bi bi-tags"></i> Categorías</a>
+                <a class="nav-link" asp-area="" asp-controller="Comentarios" asp-action="Index"><i class="bi bi-chat-left-text"></i> Comentarios</a>
+                <a class="nav-link" asp-area="" asp-controller="Ejercicios" asp-action="Index"><i class="bi bi-journal-text"></i> Ejercicios</a>
+                <a class="nav-link" asp-area="" asp-controller="Metas" asp-action="Index"><i class="bi bi-bullseye"></i> Metas</a>
+                <a class="nav-link" asp-area="" asp-controller="Estadisticas" asp-action="Index"><i class="bi bi-graph-up-arrow"></i> Estadísticas</a>
+                <a class="nav-link" asp-area="" asp-controller="Progresoes" asp-action="Index"><i class="bi bi-trophy"></i> Progreso</a>
+            </nav>
+        </div>
+    }
 
     <!-- Contenido principal -->
     <div id="main-content" class="container container-main mt-4">
@@ -102,7 +105,7 @@
     <!-- Pie de página -->
     <footer class="footer mt-auto py-3 bg-dark text-white">
         <div class="container text-center">
-            <small>Trabajo Final semana 7 PSP &copy; 2024</small>
+            <small>&copy; 2024 Entrega PSP | Todos los derechos reservados.</small>
         </div>
     </footer>
 

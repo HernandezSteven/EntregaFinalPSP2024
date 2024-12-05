@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+@* Título y encabezado de la página *@
+<div class="text-center mb-4">
+    <h2 class="display-4 text-white">Iniciar Sesión</h2>
+    <p class="lead text-white">Bienvenido de nuevo. Ingresa tus credenciales para continuar.</p>
+</div>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="card shadow-lg p-4 mb-5 bg-white rounded" style="max-width: 400px; width: 100%; position: relative; z-index: 2;">
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label for="email" class="text-dark">Correo Electrónico</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Ingrese su correo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena" class="text-dark">Contraseña</label>
+                <input type="password" name="contrasena" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+            <br>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Iniciar Sesión</button>
+            </div><br>
+            <div class="form-group text-center">
+                <a href="@Url.Action("Registro", "Usuarios")" class="btn btn-link text-primary">¿No tienes cuenta? Regístrate aquí</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@* Estilos adicionales *@
+<style>
+    body {
+        background: linear-gradient(to bottom, #00aaff, #004d99); /* Degradado de azul */
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .lead {
+        font-size: 1.25rem;
+    }
+
+    .text-white {
+        color: white !important;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .btn-link {
+        text-decoration: none;
+        font-size: 1.1rem;
+    }
+
+        .btn-link:hover {
+            color: #0056b3;
+        }
+
+    .text-dark {
+        color: #333 !important; /* Color oscuro para las etiquetas */
+    }
+
+</style>
+
+@* Agrega el icono de usuario para el campo de correo *@
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>

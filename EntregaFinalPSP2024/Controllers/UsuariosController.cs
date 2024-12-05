@@ -120,7 +120,61 @@ namespace EntregaFinalPSP2024.Controllers
             ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id", usuario.IdRol);
             return View(usuario);
         }
+        // GET: Usuarios/Login
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        [HttpGet]
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+        // Acción para procesar el formulario de registro
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Registro(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+              
+
+                // Guardar usuario en la base de datos
+                _context.Add(usuario);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Login", "Usuarios");
+            }
+            return View(usuario); // Si los datos no son válidos, vuelve a mostrar el formulario
+        }
+
+    // POST: Usuarios/Login
+    [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(string email, string contrasena)
+        {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contrasena))
+            {
+                ViewBag.Error = "Por favor, complete todos los campos.";
+                return View();
+            }
+
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email && u.Contrasena == contrasena);
+
+            if (usuario == null)
+            {
+                ViewBag.Error = "Credenciales inválidas.";
+                return View();
+            }
+
+            // Aquí puedes guardar la información del usuario en una sesión (si usas sesiones)
+            HttpContext.Session.SetString("UsuarioNombre", usuario.Nombre);
+            HttpContext.Session.SetInt32("UsuarioID", usuario.Id);
+
+            return RedirectToAction("Index", "Home"); // Redirigir a la página principal o dashboard
+        }
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -160,4 +214,5 @@ namespace EntregaFinalPSP2024.Controllers
             return _context.Usuarios.Any(e => e.Id == id);
         }
     }
+
 }
