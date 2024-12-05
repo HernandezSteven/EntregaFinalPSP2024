@@ -10,45 +10,93 @@
         </h1>
         <p class="lead text-muted mb-5">ENTREGA 3 SEMANA 7</p>
 
-        <!-- Información del curso -->
-        <div class="card shadow-lg mb-4">
-            <div class="card-body">
-                <h3 class="card-title text-success">MATERIA:</h3>
-                <p class="card-text">SEGUNDO BLOQUE-TEÓRICO-PRÁCTICO - VIRTUAL/PROCESO DE SOFTWARE PERSONAL - PSP-[GRUPO B01]</p>
-            </div>
-        </div>
+        <!-- Sliders -->
+        <div id="infoCarousel" class="carousel slide shadow-lg rounded" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-inner">
 
-        <!-- Información del estudiante -->
-        <div class="card shadow-lg mb-4">
-            <div class="card-body">
-                <h3 class="card-title text-info">ESTUDIANTES:</h3>
-                <p class="card-text">LOUIS STEVEN HERNÁNDEZ SÁNCHEZ</p>
-            </div>
-        </div>
+                <!-- Información del curso -->
+                <div class="carousel-item active" style="background-color: #f8f9fa;">
+                    <div class="card border-0" style="height: 300px; background-color: transparent;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="card-title text-success display-6">
+                                <i class="bi bi-book"></i> MATERIA:
+                            </h3>
+                            <p class="card-text fs-4 text-center">
+                                SEGUNDO BLOQUE-TEÓRICO-PRÁCTICO - VIRTUAL/PROCESO DE SOFTWARE PERSONAL - PSP-[GRUPO B01]
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Código del estudiante -->
-        <div class="card shadow-lg mb-4">
-            <div class="card-body">
-                <h3 class="card-title text-warning">CÓDIGO:</h3>
-                <p class="card-text">100382003</p>
-            </div>
-        </div>
+                <!-- Información del estudiante -->
+                <div class="carousel-item" style="background-color: #e9f7ff;">
+                    <div class="card border-0" style="height: 300px; background-color: transparent;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="card-title text-info display-6">
+                                <i class="bi bi-person"></i> ESTUDIANTES:
+                            </h3>
+                            <p class="card-text fs-4 text-center">
+                                LOUIS STEVEN HERNÁNDEZ SÁNCHEZ
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Información de la institución -->
-        <div class="card shadow-lg mb-4">
-            <div class="card-body">
-                <h3 class="card-title text-danger">INSTITUCIÓN:</h3>
-                <p class="card-text">INSTITUCIÓN UNIVERSITARIA POLITÉCNICO GRANCOLOMBIANO</p>
-            </div>
-        </div>
+                <!-- Código del estudiante -->
+                <div class="carousel-item" style="background-color: #fff3cd;">
+                    <div class="card border-0" style="height: 300px; background-color: transparent;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="card-title text-warning display-6">
+                                <i class="bi bi-key"></i> CÓDIGO:
+                            </h3>
+                            <p class="card-text fs-4 text-center">
+                                100382003
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Año de la actividad -->
-        <div class="card shadow-lg mb-4">
-            <div class="card-body">
-                <h3 class="card-title text-muted">AÑO:</h3>
-                <p class="card-text">2024</p>
-            </div>ión 
-        </div><br><br><br>
+                <!-- Información de la institución -->
+                <div class="carousel-item" style="background-color: #f8d7da;">
+                    <div class="card border-0" style="height: 300px; background-color: transparent;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="card-title text-danger display-6">
+                                <i class="bi bi-building"></i> INSTITUCIÓN:
+                            </h3>
+                            <p class="card-text fs-4 text-center">
+                                INSTITUCIÓN UNIVERSITARIA POLITÉCNICO GRANCOLOMBIANO
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Año de la actividad -->
+                <div class="carousel-item" style="background-color: #ececec;">
+                    <div class="card border-0" style="height: 300px; background-color: transparent;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            <h3 class="card-title text-muted display-6">
+                                <i class="bi bi-calendar"></i> AÑO:
+                            </h3>
+                            <p class="card-text fs-4 text-center">
+                                2024
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles de navegación (opcional) -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#infoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#infoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
     </div>
 </div>
 
+<!-- Agregar el script de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
