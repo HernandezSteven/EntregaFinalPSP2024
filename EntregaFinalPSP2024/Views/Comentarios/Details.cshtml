@@ -1,42 +1,45 @@
 ﻿@model EntregaFinalPSP2024.Models.Comentario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Comentario";
 }
 
-<br /><br /><h1>Details</h1>
+<div class="container mt-4">
+    <h1 class="text-primary">Detalles del Comentario</h1>
 
-<div>
-    <h4>Comentario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Comentario1)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Comentario1)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaComentario)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaComentario)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEjercicioNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEjercicioNavigation.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdUsuarioNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdUsuarioNavigation.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-     <a class="btn btn-secondary" asp-action="Index"><i class="bi bi-arrow-left"></i> Volver a la Lista</a>
+    <div>
+        <h4>Comentario</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Comentario1)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Comentario1)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FechaComentario)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FechaComentario)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdEjercicioNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdEjercicioNavigation.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IdUsuarioNavigation)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IdUsuarioNavigation.Id)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="mt-3">
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model?.Id"><i class="bi bi-pencil"></i> Editar</a> |
+        <a class="btn btn-secondary" asp-action="Index"><i class="bi bi-arrow-left"></i> Volver a la Lista</a>
+    </div>
 </div>

@@ -1,51 +1,70 @@
 ﻿@model EntregaFinalPSP2024.Models.Comentario
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear Comentario";
 }
 
-<br /><br /><h1>Nuevo Registro</h1>
+<div class="container mt-4">
+    <h1 class="text-primary">Nuevo Registro</h1>
+    <h4 class="text-secondary">Comentario</h4>
+    <hr />
 
-<h4>Comentario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
-                <span asp-validation-for="Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <select asp-for="IdUsuario" class ="form-control" asp-items="ViewBag.IdUsuario"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdEjercicio" class="control-label"></label>
-                <select asp-for="IdEjercicio" class ="form-control" asp-items="ViewBag.IdEjercicio"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comentario1" class="control-label"></label>
-                <input asp-for="Comentario1" class="form-control" />
-                <span asp-validation-for="Comentario1" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaComentario" class="control-label"></label>
-                <input asp-for="FechaComentario" class="form-control" />
-                <span asp-validation-for="FechaComentario" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle"></i> Crear</button>
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Create" novalidate>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <!-- Campo ID -->
+                <div class="mb-3">
+                    <label asp-for="Id" class="form-label">ID</label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Usuario -->
+                <div class="mb-3">
+                    <label asp-for="IdUsuario" class="form-label">Usuario</label>
+                    <select asp-for="IdUsuario" class="form-control" asp-items="ViewBag.IdUsuario"></select>
+                    <span asp-validation-for="IdUsuario" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Ejercicio -->
+                <div class="mb-3">
+                    <label asp-for="IdEjercicio" class="form-label">Ejercicio</label>
+                    <select asp-for="IdEjercicio" class="form-control" asp-items="ViewBag.IdEjercicio"></select>
+                    <span asp-validation-for="IdEjercicio" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Comentario -->
+                <div class="mb-3">
+                    <label asp-for="Comentario1" class="form-label">Comentario</label>
+                    <input asp-for="Comentario1" class="form-control" />
+                    <span asp-validation-for="Comentario1" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Fecha Comentario -->
+                <div class="mb-3">
+                    <label asp-for="FechaComentario" class="form-label">Fecha de Comentario</label>
+                    <input asp-for="FechaComentario" class="form-control" />
+                    <span asp-validation-for="FechaComentario" class="text-danger"></span>
+                </div>
+
+                <!-- Botón Crear -->
+                <div class="d-flex justify-content-start">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="bi bi-check-circle"></i> Crear
+                    </button>
+                    <a class="btn btn-secondary" asp-action="Index">
+                        <i class="bi bi-arrow-left"></i> Volver a la Lista
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-     <a class="btn btn-secondary" asp-action="Index"><i class="bi bi-arrow-left"></i> Volver a la Lista</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

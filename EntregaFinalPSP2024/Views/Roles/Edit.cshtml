@@ -1,39 +1,50 @@
 ﻿@model EntregaFinalPSP2024.Models.Role
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Rol";
 }
 
-<br /><br /><h1>Edit</h1>
+<div class="container mt-4">
+    <h1 class="text-primary">Editar Rol</h1>
+    <h4 class="text-secondary">Actualiza la información del rol</h4>
+    <hr />
 
-<h4>Role</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Campo Nombre -->
+                <div class="mb-3">
+                    <label asp-for="Nombre" class="form-label">Nombre</label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <!-- Campo Descripción -->
+                <div class="mb-3">
+                    <label asp-for="Descripcion" class="form-label">Descripción</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+
+                <!-- Botón Guardar -->
+                <div class="d-flex justify-content-start">
+                    <button type="submit" class="btn btn-primary me-2">
+                        <i class="bi bi-save"></i> Guardar
+                    </button>
+                    <a class="btn btn-secondary" asp-action="Index">
+                        <i class="bi bi-arrow-left"></i> Volver a la Lista
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-     <a class="btn btn-secondary" asp-action="Index"><i class="bi bi-arrow-left"></i> Volver a la Lista</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
