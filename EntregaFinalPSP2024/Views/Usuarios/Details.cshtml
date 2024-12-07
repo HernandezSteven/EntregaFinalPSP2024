@@ -1,48 +1,62 @@
 ﻿@model EntregaFinalPSP2024.Models.Usuario
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles del Usuario";
 }
 
-<br /><br /><h1>Details</h1>
-
-<div>
-    <h4>Usuario</h4>
+<div class="container mt-4">
+    <h1 class="text-primary">Detalles del Usuario</h1>
+    <h4 class="text-secondary">Información</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
+        <!-- Campo Nombre -->
+        <dt class="col-sm-3 fw-bold text-dark">
+            Nombre
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Nombre)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
+
+        <!-- Campo Email -->
+        <dt class="col-sm-3 fw-bold text-dark">
+            Correo Electrónico
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contrasena)
+
+        <!-- Campo Contraseña -->
+        <dt class="col-sm-3 fw-bold text-dark">
+            Contraseña
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Contrasena)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nivel)
+
+        <!-- Campo Nivel -->
+        <dt class="col-sm-3 fw-bold text-dark">
+            Nivel
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Nivel)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdRolNavigation)
+
+        <!-- Campo Rol -->
+        <dt class="col-sm-3 fw-bold text-dark">
+            Rol
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdRolNavigation.Id)
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IdRolNavigation.Nombre)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-     <a class="btn btn-secondary" asp-action="Index"><i class="bi bi-arrow-left"></i> Volver a la Lista</a>
+
+    <!-- Botones -->
+    <div class="d-flex justify-content-start">
+        <a class="btn btn-warning me-2" asp-action="Edit" asp-route-id="@Model?.Id">
+            <i class="bi bi-pencil"></i> Editar
+        </a>
+        <a class="btn btn-secondary" asp-action="Index">
+            <i class="bi bi-arrow-left"></i> Volver a la Lista
+        </a>
+    </div>
 </div>

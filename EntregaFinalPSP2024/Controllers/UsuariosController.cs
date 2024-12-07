@@ -47,7 +47,7 @@ namespace EntregaFinalPSP2024.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdRol"] = new SelectList(_context.Roles, "Id", "Id");
+             ViewBag.IdRol = new SelectList(_context.Roles, "Id", "Nombre");
             return View();
         }
 
